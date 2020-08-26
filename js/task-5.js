@@ -5,14 +5,15 @@ const products = [
   { name: 'Захват', price: 1200, quantity: 2 },
 ]
 
-console.table(products)
-
 const getAllPropValues = function (arr, prop) {
   const list = []
 
   for (const product of arr) {
-    list.push(product[prop])
+    if (product[prop]) {
+      list.push(product[prop])
+    } else return []
   }
+
   return list
 }
 
